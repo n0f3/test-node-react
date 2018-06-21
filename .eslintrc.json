@@ -1,0 +1,57 @@
+{
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "babel",
+    "jsx-a11y",
+    "class-property"
+  ],
+  "extends": [
+    "airbnb",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "jest": true,
+    "es6": true
+  },
+  "rules": {
+    "babel/new-cap": 1,
+    "babel/no-invalid-this": 1,
+    "babel/semi": 1,
+    "quotes": [
+      2,
+      "single"
+    ],
+    "import/newline-after-import": 0,
+    "func-names": 0,
+    "react/jsx-filename-extension": 0,
+    "react/prefer-stateless-function": "warn",
+    "jsx-quotes": 0,
+    "no-console": 0,
+    "consistent-return": 0,
+    "react/forbid-prop-types": 0,
+    "no-plusplus": "off",
+    "no-unused-vars": "warn",
+    "react/prop-types": "warn",
+    "react/require-default-props": "off",
+    "one-var": "off",
+    "no-param-reassign": "off",
+    "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
+    "comma-dangle": "off",
+    "react/sort-comp": "off",
+    "max-len": "off",
+    "react/no-unused-prop-types": "off",
+    "linebreak-style": "off"
+  }
+}

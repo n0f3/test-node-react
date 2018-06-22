@@ -9,7 +9,6 @@
     "dev-server": "npx cross-env NODE_ENV=dev webpack-dev-server --config webpack.config.client.js",
     "node-server": "nodemon --exec babel-node --presets=env -- ./src/server/index.js",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run node-server\"",
-    "start": "node ./src/server/index.js",
     "prod": "npx cross-env NODE_ENV=production webpack-dev-server --env=prod --config webpack.config.js",
     "clean": "rimraf dist"
   },
@@ -27,6 +26,7 @@
     "react": "^16.4.1",
     "react-redux": "^5.0.7",
     "redux-thunk": "^2.3.0",
+    "request": "^2.87.0",
     "rimraf": "^2.6.2"
   },
   "devDependencies": {

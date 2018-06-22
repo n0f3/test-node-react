@@ -52,7 +52,8 @@ export const findTagWithText =
             result.exists = true;
             return false;
           }
-        })
+        });
         resolve(result);
       })
-  })
+      .catch(error => reject(error));
+  });

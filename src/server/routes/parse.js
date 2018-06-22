@@ -1,10 +1,10 @@
-import { scrape } from '../utils/scraper';
+import { findTags } from '../utils/scraper';
 
 const parse = (req, res, next) => {
   console.log(req.query);
   const { endpoint, tag: tags } = req.query;
   if (endpoint && tags) {
-    scrape(endpoint, tags)
+    findTags(endpoint, tags)
       .then(result => res.json(result))
       .catch(err => next(err));
   } else {

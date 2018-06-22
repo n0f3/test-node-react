@@ -19,13 +19,13 @@ const getBodyToParse = (endpoint) => {
   return rp(requestPromiseOptions);
 };
 
-export const scrape = (endpoint, tags) => {
-  return new Promise((resolve, reject) => {
+export const findTags =
+  (endpoint, tags) => new Promise((resolve, reject) => {
     getBodyToParse(endpoint)
       .then(($) => {
         const result = {};
         tags.forEach((tag) => {
-          $(tag).each((i, element) => {
+          $(tag).each((index, element) => {
             if (!result[tag]) {
               result[tag] = [];
             }
@@ -39,5 +39,20 @@ export const scrape = (endpoint, tags) => {
       })
       .catch(error => reject(error));
   });
-};
 
+export const findTagWithText =
+  (endpoint, tag, text) => new Promise((resolve, reject) => {
+    getBodyToParse(endpoint)
+      .then(($) => {
+        const result = {
+          exists: false,
+        };
+        $(tag).each((index, element) => {
+          if ($(element).text().indexOf(text) > -1) {
+            result.exists = true;
+            return false;
+          }
+        })
+        resolve(result);
+      })
+  })

@@ -2,6 +2,8 @@
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
+const rootPath = process.cwd();
+
 module.exports = {
   name: 'server',
   target: 'node',
@@ -12,14 +14,14 @@ module.exports = {
     modulesFromFile: true,
   })],
   devtool: 'inline-source-map',
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(rootPath, 'src'),
   entry: [
     'babel-polyfill',
-    '.../server/index.js',
+    '../server/index.js',
     // the entry point of our app
   ],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(DeviceRotationRate, 'dist'),
     filename: 'bundle.node.js',
   },
   module: {
@@ -39,7 +41,7 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader', 'resolve-url-loader'],
         include: [
-          path.join(__dirname, 'src'),
+          path.join(rootPath, 'src'),
           /node_modules/
         ],
       },

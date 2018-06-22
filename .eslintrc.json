@@ -53,6 +53,7 @@
     "max-len": "off",
     "react/no-unused-prop-types": "off",
     "linebreak-style": "off",
-    "prefer-destructuring": "warn"
+    "prefer-destructuring": "warn",
+    "function-paren-newline": "off"
   }
 }

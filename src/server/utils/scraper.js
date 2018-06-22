@@ -20,7 +20,7 @@ const getBodyToParse = (endpoint) => {
 };
 
 export const findTags =
-  (endpoint, tags) => new Promise((resolve, reject) => {
+  (endpoint, tags) =>
     getBodyToParse(endpoint)
       .then(($) => {
         const result = {};
@@ -35,13 +35,11 @@ export const findTags =
             });
           });
         });
-        resolve(result);
-      })
-      .catch(error => reject(error));
-  });
+        return result;
+      });
 
 export const findTagWithText =
-  (endpoint, tag, text) => new Promise((resolve, reject) => {
+  (endpoint, tag, text) =>
     getBodyToParse(endpoint)
       .then(($) => {
         const result = {
@@ -53,7 +51,5 @@ export const findTagWithText =
             return false;
           }
         });
-        resolve(result);
-      })
-      .catch(error => reject(error));
-  });
+        return result;
+      });

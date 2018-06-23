@@ -1,5 +1,10 @@
 import React from 'react';
+import FindTagContainer from '../containers/FindTagContainer';
 
-const App = props => <h1>hello</h1>;
+const App = () => (
+  <div>
+    <FindTagContainer />
+  </div>
+);
 
 export default App;

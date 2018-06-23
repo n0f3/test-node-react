@@ -6,13 +6,3 @@ ReactDOM.render(
   <Root />,
   document.getElementById('root'),
 );
-
-// Hot Module Replacement API
-if (module.hot) {
-  module.hot.accept('./components/App', () => {
-    ReactDOM.render(
-      <Root />,
-      document.getElementById('root'),
-    );
-  });
-}

@@ -1,7 +1,8 @@
 import { createStore, applyMiddleware, compose } from 'redux';
+import thunk from 'redux-thunk';
 import rootReducer from './reducers/index';
 
-const middleWares = [];
+const middleWares = [thunk];
 
 if (process.env.NODE_ENV === 'development') {
   // eslint-disable-next-line global-require
@@ -10,7 +11,9 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const defaultState = {
-  result: {},
+  tagsResult: {},
+  isLoading: false,
+  error: '',
 };
 
 // Adding chrome redux devtools if available

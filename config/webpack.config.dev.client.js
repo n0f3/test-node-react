@@ -8,11 +8,9 @@ const rootPath = process.cwd();
 
 module.exports = {
   target: 'web',
+  mode: 'development',
   context: path.resolve(rootPath, 'src'),
   entry: [
-    'webpack-dev-server/client?http://localhost:9000',
-    // bundle the client for hot reloading
-    // only- means to only hot reload for successful updates
     'client/index.js',
     // the entry point of our app
   ],
@@ -20,7 +18,6 @@ module.exports = {
     filename: 'bundle.js',
     path: path.resolve(rootPath, 'dist'),
     publicPath: '/',
-    // necessary for HMR to know where to load the hot update chunks
     pathinfo: true,
     // adds information about the contained modules in the bundled file
   },
@@ -77,26 +74,15 @@ module.exports = {
       template: path.resolve(rootPath, './public/index.html'),
     }),
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
       'process.env.BROWSER': true,
-      'process.env.G_MAPS_API_KEY': JSON.stringify('AIzaSyAQYe8tQZBbG5uKHgvbWHwVFvAHi9MMDCk'),
     }),
   ],
   node: {
     fs: 'empty',
     net: 'empty',
     tls: 'empty',
-  },
-  devServer: {
-    contentBase: path.join(rootPath, 'dist'),
-    port: 9000,
-    host: 'localhost',
-    publicPath: '/',
-    compress: true,
-    historyApiFallback: true,
-    hot: true,
   },
 };

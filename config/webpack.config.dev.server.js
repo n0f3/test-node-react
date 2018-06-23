@@ -7,6 +7,7 @@ const rootPath = process.cwd();
 module.exports = {
   name: 'server',
   target: 'node',
+  mode: 'development',
   node: {
     __dirname: false,
   },

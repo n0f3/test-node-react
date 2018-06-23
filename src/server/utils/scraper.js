@@ -20,19 +20,17 @@ const getBodyToParse = (endpoint) => {
 };
 
 export const findTags =
-  (endpoint, tags) =>
+  (endpoint, tag) =>
     getBodyToParse(endpoint)
       .then(($) => {
         const result = {};
-        tags.forEach((tag) => {
-          $(tag).each((index, element) => {
-            if (!result[tag]) {
-              result[tag] = [];
-            }
-            result[tag].push({
-              innerText: $(element).text(),
-              innerHTML: $(element).html(),
-            });
+        $(tag).each((index, element) => {
+          if (!result[tag]) {
+            result[tag] = [];
+          }
+          result[tag].push({
+            innerText: $(element).text(),
+            innerHTML: $(element).html(),
           });
         });
         return result;

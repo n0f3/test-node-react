@@ -3,7 +3,7 @@ import express from 'express';
 import path from 'path';
 import helmet from 'helmet';
 import morgan from 'morgan';
-import router from './routes/index';
+import apiRouter from './routes/apiRouter';
 const rootPath = process.cwd();
 
 
@@ -13,13 +13,10 @@ const configApp = (app) => {
 
   app.use(morgan('combined'));
 
-  app.use(router);
+  app.use('/api', apiRouter);
 
   app.get('/', (req, res) => {
-    res.json({
-      message: 'sup'
-    });
-    // res.sendFile(path.resolve(rootPath, 'dist', 'index.html'));
+    res.sendFile(path.resolve(rootPath, 'dist', 'index.html'));
   });
 
   // catch 404 and forward to error handler

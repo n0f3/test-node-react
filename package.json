@@ -4,9 +4,9 @@
   "description": "Simple test app",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "npx cross-env NODE_ENV=development webpack --progress --config webpack.config.client.js",
+    "build:dev": "npx cross-env NODE_ENV=development webpack --progress --config \"./config/webpack.config.dev.client.js\"",
     "build:prod": " npx cross-env NODE_ENV=production webpack --progress --config webpack.prod.js",
-    "dev-server": "npx cross-env NODE_ENV=dev webpack-dev-server --config ./config/webpack.config.dev.client.js",
+    "dev-server": "webpack --watch --config \"./config/webpack.config.dev.client.js\"",
     "node-server": "nodemon --exec babel-node --presets=env -- ./src/server/index.js",
     "dev": "concurrently --kill-others \"npm run dev-server\" \"npm run node-server\"",
     "prod": "npx cross-env NODE_ENV=production webpack-dev-server --env=prod --config webpack.config.js",
@@ -19,6 +19,7 @@
   "author": "n0f3",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.3",
     "helmet": "^3.12.1",

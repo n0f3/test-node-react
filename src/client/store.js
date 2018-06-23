@@ -1,6 +1,6 @@
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/index';
+import getTag from './reducers/getTag';
 
 const middleWares = [thunk];
 
@@ -19,7 +19,7 @@ const defaultState = {
 // Adding chrome redux devtools if available
 // eslint-disable-next-line no-underscore-dangle
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(rootReducer, defaultState, composeEnhancers(
+const store = createStore(getTag, defaultState, composeEnhancers(
   applyMiddleware(...middleWares)),
 );
 

@@ -4,7 +4,7 @@ import { PropTypes } from 'prop-types';
 
 class FindTag extends Component {
   static propTypes = {
-
+    getTag: PropTypes.func.isRequired,
   };
 
   state = {
@@ -24,7 +24,7 @@ class FindTag extends Component {
       ...this.state,
       tagInput: event.target.value,
     });
-  }
+  };
 
   handleSubmit = () => {
     if (

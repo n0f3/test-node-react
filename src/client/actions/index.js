@@ -28,8 +28,7 @@ export const getTagInfo =
     })
       .then(
         (result) => {
-          console.log(result);
-          dispatch(getTagInfoSuccess(result));
+          dispatch(getTagInfoSuccess(result.data));
         }
       )
       .catch(

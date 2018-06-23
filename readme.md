@@ -2,6 +2,11 @@
 
 Simple React web application hosted on an express web server.
 
+## Live demo
+[https://test-cob.herokuapp.com/]
+
+## Project Info
+
 Backend routes are mounted on /api and are as follows:
 
 * `/api/parse?endpoint=www.cobalt.io&tag=h1`: This will return all the matching tags at the desired endpoint. Http is added automatically so it's not necessary. It's possible to pass in multiple tags by separating them with a comma such as `/api/parse?endpoint=www.cobalt.io&tag=h1,h2,h3`
@@ -18,7 +23,7 @@ The return object is a JSON object:
   ...
 }
 ```
-* `/api/contains?endpoint=www.cobalt.io&tag=h1&text`: This will return whether or not the given endpoint contains a tag of the specified type that has certain text inside. Return object is a json object:
+* `/api/contains?endpoint=www.cobalt.io&tag=h1&text=Pen%20Testing%20as%20a%20Service`: This will return whether or not the given endpoint contains a tag of the specified type that has certain text inside. Return object is a json object:
 ```
 {
   "exists": "true",
@@ -86,3 +91,4 @@ Javascript linter file is provided for development. It's following a custom hybr
 Stage-2 and Stage-3 features are being used in the babel config.
 
 Both normalize.css and Autoprefixer are being run on stlesheet.
+

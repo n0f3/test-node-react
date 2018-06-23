@@ -1,6 +1,6 @@
 # Test app cobalt
 
-Simple React web application hosted on an express web server.
+Simple React web application hosted on a Node.js server.
 
 ## Live demo
 [https://test-cob.herokuapp.com/]

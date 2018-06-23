@@ -6,7 +6,7 @@ const getBodyToParse = (endpoint) => {
     throw Error('Both end point and tag need to be valid');
   }
 
-  const httpRegex = /^(https?):\/\//g
+  const httpRegex = /^(https?):\/\//g;
   const hasHttp = httpRegex.test(endpoint);
   if (!hasHttp) {
     endpoint = `http://${endpoint}`;
@@ -34,7 +34,7 @@ export const findTags =
               innerHTML: $(element).html(),
             });
           });
-        })
+        });
         return result;
       });
 

@@ -13,7 +13,7 @@ if (process.env.NODE_ENV === 'development') {
 const defaultState = {
   tagsResult: {},
   isLoading: false,
-  error: '',
+  error: {},
 };
 
 // Adding chrome redux devtools if available

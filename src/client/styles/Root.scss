@@ -9,3 +9,21 @@ html {
 * {
   box-sizing: border-box;
 }
+
+input,
+button {
+  outline: none !important;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  padding: 10% 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  #root {
+    max-width: 90%;
+  }
+}

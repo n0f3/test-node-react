@@ -1,5 +1,31 @@
-.FindTag {
+.find-tag {
   display: flex;
-  position: relative;
-  justify-content: flex-start;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  margin: auto;
+  border: 1px solid #d2d2d2;
+  padding: 1rem;
+  h1 {
+    text-align: center;
+  }
+
+  input {
+    margin-top: 10px;
+    margin-left: 1rem;
+    padding: 0.25rem;
+    appearance: none;
+    border: 1px solid #d2d2d2;
+  }
+  button {
+    appearance: none;
+    margin-top: 10px;
+    align-self: center;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #d2d2d2;
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

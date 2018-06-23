@@ -37,7 +37,10 @@ class FindTag extends Component {
 
   render() {
     return (
-      <div className='FindTag'>
+      <div className='find-tag'>
+        <h1>
+          Find desired tag in webpage
+        </h1>
         <input
           type='text'
           name='endpoint'
@@ -47,7 +50,7 @@ class FindTag extends Component {
         <input
           type='text'
           name='tag'
-          placeholder='Enter html tag to search in endpoint page'
+          placeholder='Enter html tag comma separated list'
           onChange={this.handleTagChange}
         />
         <button

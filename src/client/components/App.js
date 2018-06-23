@@ -5,7 +5,7 @@ import TagResultContainer from '../containers/TagResultContainer';
 const App = () => (
   <div
     style={{
-      width: '80%',
+      height: '100%',
     }}
   >
     <FindTagContainer />

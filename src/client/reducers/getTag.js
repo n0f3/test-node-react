@@ -6,6 +6,7 @@ const getTag = (state = {}, action) => {
       return {
         ...state,
         isLoading: true,
+        error: {}
       };
     case ActionTypes.GET_TAG_SUCCESS:
       return {

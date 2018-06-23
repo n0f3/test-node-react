@@ -4,7 +4,7 @@ const parse = (req, res, next) => {
   console.log(req.query);
   const { endpoint, tag: tags } = req.query;
   if (endpoint && tags) {
-    findTags(endpoint, tags)
+    findTags(endpoint, tags.split(','))
       .then(result => res.json(result))
       .catch(err => next(err));
   } else {

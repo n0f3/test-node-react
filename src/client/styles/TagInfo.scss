@@ -1,0 +1,8 @@
+.tag-info {
+  flex: 0 1 auto;
+  width: 100%;
+  &:first-child {
+    border: none;
+    border-bottom: 1px solid white;
+  }
+}

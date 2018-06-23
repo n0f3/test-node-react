@@ -16,14 +16,14 @@ const getTagInfoError = error => ({
 });
 
 export const getTagInfo =
-  (endpoint, tag) => (dispatch) => {
+  (endpoint, tags) => (dispatch) => {
     dispatch(getTagRequest());
     axios.request({
       url: '/api/parse',
       method: 'get',
       params: {
         endpoint,
-        tag,
+        tag: tags,
       },
     })
       .then(

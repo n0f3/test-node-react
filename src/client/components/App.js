@@ -3,7 +3,11 @@ import FindTagContainer from '../containers/FindTagContainer';
 import TagResultContainer from '../containers/TagResultContainer';
 
 const App = () => (
-  <div>
+  <div
+    style={{
+      width: '80%',
+    }}
+  >
     <FindTagContainer />
     <TagResultContainer />
   </div>

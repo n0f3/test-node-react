@@ -41,17 +41,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'resolve-url-loader'],
+        use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
         include: [
-          path.join(__dirname, 'src'),
+          path.join(rootPath, 'src'),
           /node_modules/
         ],
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            'css-loader',
+            'postcss-loader',
+            'sass-loader'
+          ]
+        }),
         include: [
-          path.join(__dirname, 'src'),
+          path.join(rootPath, 'src'),
           /node_modules/
         ],
       },
@@ -67,7 +74,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new ExtractTextPlugin('styles.css'),
+    new ExtractTextPlugin('[name].bundle.css'),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
       inject: true,

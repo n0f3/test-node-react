@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { PropTypes } from 'prop-types';
-
+import '../styles/FindTag.scss';
 
 class FindTag extends Component {
   static propTypes = {
@@ -37,7 +37,7 @@ class FindTag extends Component {
 
   render() {
     return (
-      <div>
+      <div className='FindTag'>
         <input
           type='text'
           name='endpoint'
